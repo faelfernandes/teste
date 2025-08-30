@@ -33,8 +33,9 @@ export async function createAppRouter(): Promise<any> {
   const routes: RouteRecordRaw[] = [
     {
       path: '/',
-      name: 'root',
+      name: 'home',
       component: HomeScreen,
+      meta: { appId: 'home', title: 'Home' } // Special case for home screen
     },
     ...appRoutes
   ]

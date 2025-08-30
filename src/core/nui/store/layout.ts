@@ -293,7 +293,6 @@ export const useLayoutStore = defineStore('layout', () => {
     loading,
     isLayoutLoaded,
     currentPage,
-    currentAppConfig,
     draggedApp,
     draggedFrom,
     
