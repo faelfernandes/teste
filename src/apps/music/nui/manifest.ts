@@ -7,7 +7,11 @@ const manifest: AppConfig = {
   preinstalled: false,
   removable: true,
   category: 'store',
-  route: '/app/music'
+  route: '/app/music',
+  statusBar: {
+    mode: 'fullscreen',
+    style: 'dark'
+  }
 }
 
 export default manifest

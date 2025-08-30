@@ -126,7 +126,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="min-h-screen flex items-center justify-center p-4 bg-zinc-800">
+  <div class="min-h-screen flex items-center justify-end p-4 pr-8 overflow-hidden">
     <div ref="phoneContainerRef" class="phone-container relative w-[375px] h-[812px]">
       <PhoneFrame
         @power="handlePowerButton"
@@ -233,7 +233,7 @@ onMounted(() => {
           
           <!-- Top UI Elements -->
           <StatusBar 
-            v-if="isScreenOn && layoutStore.statusBarMode !== 'fullscreen'" 
+            v-if="isScreenOn && layoutStore.statusBarMode !== 'fullscreen'"
             :time="currentTime"
             class="absolute top-0 left-0 right-0 z-50"
           />
