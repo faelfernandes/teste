@@ -88,7 +88,7 @@ export const useMarketplaceStore = defineStore('marketplace', () => {
       title: data.title,
       description: data.description,
       price: data.price,
-      imageUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/200x150/e0e0e0/777?text=New+Post',
+      imageUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/200x150/e0e0e0/777?text=New+Post',
       timestamp: 'Just now',
       isOwner: true,
     };

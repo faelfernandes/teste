@@ -161,12 +161,11 @@ onMounted(() => {
                   :name="route.meta.transition || 'fade'"
                   mode="out-in"
                 >
-                  <div :key="route.name" :class="mainContentClasses">
+                  <div :key="route.path" :class="mainContentClasses">
                     <component 
                       :is="Component" 
                       v-if="Component" 
                     />
-                    <HomeScreen v-else class="h-full w-full"/>
                   </div>
                 </transition>
               </router-view>

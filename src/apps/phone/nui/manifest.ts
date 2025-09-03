@@ -7,7 +7,14 @@ const manifest: AppConfig = {
   preinstalled: true,
   removable: false,
   category: 'system',
-  route: '/app/phone'
+  route: '/app/phone',
+  statusBar: {
+    mode: 'default',
+    style: 'light'
+  },
+  navigationBar: {
+    mode: 'hidden'
+  }
 }
 
 export default manifest
