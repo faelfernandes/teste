@@ -8,6 +8,8 @@ import AppIcon from './assets/icons/AppIcon.vue';
 import { ChevronUp, ChevronDown } from 'lucide-vue-next';
 
 const store = useCryptoStore();
+
+const getSortInfo = (key: 'name' | 'price' | 'balance') => store.getSortFor(key);
 </script>
 
 <template>
@@ -36,29 +38,38 @@ const store = useCryptoStore();
 
       <!-- List Header -->
       <div class="flex items-center justify-between text-sm font-semibold text-gray-500 dark:text-gray-400 px-2">
-        <button class="flex items-center space-x-1">
+        <button @click="store.toggleSort('name')" class="flex items-center space-x-1">
           <span>Name</span>
-          <ChevronUp class="w-4 h-4" />
+          <template v-if="getSortInfo('name')">
+            <ChevronUp v-if="getSortInfo('name')?.direction === 'asc'" class="w-4 h-4" />
+            <ChevronDown v-else class="w-4 h-4" />
+          </template>
         </button>
-        <button class="flex items-center space-x-1">
+        <button @click="store.toggleSort('price')" class="flex items-center space-x-1">
           <span>Graph</span>
-          <ChevronUp class="w-4 h-4" />
+           <template v-if="getSortInfo('price')">
+            <ChevronUp v-if="getSortInfo('price')?.direction === 'asc'" class="w-4 h-4" />
+            <ChevronDown v-else class="w-4 h-4" />
+          </template>
         </button>
-        <button class="flex items-center space-x-1">
+        <button @click="store.toggleSort('balance')" class="flex items-center space-x-1">
           <span>Balance</span>
-          <ChevronDown class="w-4 h-4" />
+           <template v-if="getSortInfo('balance')">
+            <ChevronUp v-if="getSortInfo('balance')?.direction === 'asc'" class="w-4 h-4" />
+            <ChevronDown v-else class="w-4 h-4" />
+          </template>
         </button>
       </div>
 
       <!-- Crypto List -->
       <div class="bg-white dark:bg-ios-dark-card rounded-xl divide-y divide-gray-200 dark:divide-gray-700/60">
         <CryptoListItem
-          v-for="currency in store.filteredCurrencies"
+          v-for="currency in store.sortedCurrencies"
           :key="currency.id"
           :currency="currency"
         />
       </div>
-      <div v-if="store.filteredCurrencies.length === 0" class="text-center py-10 text-gray-500">
+      <div v-if="store.sortedCurrencies.length === 0" class="text-center py-10 text-gray-500">
         No results found.
       </div>
     </div>
