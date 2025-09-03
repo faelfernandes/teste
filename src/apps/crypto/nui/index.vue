@@ -1,62 +1,66 @@
 <script setup lang="ts">
-import { useRouter } from 'vue-router'
+import { useCryptoStore } from './store/app-store';
+import PageLayout from '@core/nui/components/PageLayout.vue';
+import SearchInput from '@core/nui/components/SearchInput.vue';
+import BalanceCard from './components/BalanceCard.vue';
+import CryptoListItem from './components/CryptoListItem.vue';
+import AppIcon from './assets/icons/AppIcon.vue';
+import { ChevronUp, ChevronDown } from 'lucide-vue-next';
 
-const router = useRouter()
-
-const goBack = () => {
-  router.push('/')
-}
+const store = useCryptoStore();
 </script>
 
 <template>
-  <div class="h-full bg-gradient-to-br from-gray-900 to-black text-white flex flex-col">
-    <!-- Header -->
-    <div class="flex items-center justify-between p-4 border-b border-gray-800">
-      <button 
-        @click="goBack"
-        class="text-blue-400 text-lg hover:text-blue-300 transition-colors"
-      >
-        ← Back
-      </button>
-      <h1 class="text-lg font-semibold">Crypto</h1>
-      <div class="w-12"></div>
-    </div>
+  <PageLayout page-title="">
+    <!-- Custom Header -->
+    <template #custom-header>
+      <div class="flex items-center space-x-2 px-4 pt-12 pb-4">
+        <AppIcon class="w-7 h-7" />
+        <h1 class="text-2xl font-bold text-black dark:text-white">Crypto</h1>
+      </div>
+    </template>
 
-    <!-- App Content -->
-    <div class="flex-1 flex flex-col items-center justify-center p-8">
-      <div class="text-center space-y-6">
-        <!-- App Icon -->
-        <div class="w-24 h-24 mx-auto bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center text-4xl shadow-2xl">
-          ₿
-        </div>
-        
-        <!-- App Info -->
-        <div class="space-y-2">
-          <h2 class="text-2xl font-bold">Crypto</h2>
-          <p class="text-gray-400">Cryptocurrency</p>
-        </div>
-        
-        <!-- Coming Soon -->
-        <div class="bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 rounded-full">
-          <span class="text-white font-semibold">Em Breve</span>
-        </div>
-        
-        <!-- Features List -->
-        <div class="mt-8 space-y-3 text-left max-w-sm">
-          <div class="flex items-center space-x-3">
-            <div class="w-2 h-2 bg-blue-500 rounded-full"></div>
-            <span class="text-gray-300">Interface moderna e intuitiva</span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-            <span class="text-gray-300">Funcionalidades avançadas</span>
-          </div>
-          <div class="flex items-center space-x-3">
-            <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-            <span class="text-gray-300">Integração com sistema</span>
-          </div>
-        </div>
+    <div class="px-4 space-y-4">
+      <!-- Balance Card -->
+      <BalanceCard 
+        :balance="store.formattedBalance"
+        :is-visible="store.isBalanceVisible"
+        @toggle-visibility="store.toggleBalanceVisibility"
+      />
+
+      <!-- Search Bar -->
+      <SearchInput 
+        v-model="store.searchQuery"
+        placeholder="Search Cryptocurrency"
+      />
+
+      <!-- List Header -->
+      <div class="flex items-center justify-between text-sm font-semibold text-gray-500 dark:text-gray-400 px-2">
+        <button class="flex items-center space-x-1">
+          <span>Name</span>
+          <ChevronUp class="w-4 h-4" />
+        </button>
+        <button class="flex items-center space-x-1">
+          <span>Graph</span>
+          <ChevronUp class="w-4 h-4" />
+        </button>
+        <button class="flex items-center space-x-1">
+          <span>Balance</span>
+          <ChevronDown class="w-4 h-4" />
+        </button>
+      </div>
+
+      <!-- Crypto List -->
+      <div class="bg-white dark:bg-ios-dark-card rounded-xl divide-y divide-gray-200 dark:divide-gray-700/60">
+        <CryptoListItem
+          v-for="currency in store.filteredCurrencies"
+          :key="currency.id"
+          :currency="currency"
+        />
+      </div>
+      <div v-if="store.filteredCurrencies.length === 0" class="text-center py-10 text-gray-500">
+        No results found.
       </div>
     </div>
-  </div>
+  </PageLayout>
 </template>
