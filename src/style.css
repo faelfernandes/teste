@@ -2,6 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --phone-button-color: #3c3c3c;
+  --phone-border-color: #1c1c1c;
+  --phone-frame-color: #3c3c3c;
+  --phone-color-primary: rgb(255, 255, 255);
+  --phone-color-opacity: rgba(242, 242, 242, .4);
+  --phone-color-opacity2: rgb(30, 30, 30, .5);
+  --phone-color-highlight: rgb(250, 250, 250);
+  --phone-color-highlight2: rgb(240, 240, 240);
+  --phone-color-highlight3: rgb(220, 220, 220);
+  --phone-highlight-opacity15: rgba(145, 145, 145, .15);
+  --phone-highlight-opacity35: rgba(145, 145, 145, .35);
+  --phone-highlight-opacity45: rgba(145, 145, 145, .45);
+  --phone-highlight-opacity55: rgba(145, 145, 145, .55);
+  --phone-color-input: rgba(241, 241, 241, .656);
+  --phone-text-primary: rgb(0, 0, 0);
+  --phone-text-secondary: rgb(142, 142, 147);
+  --phone-color-hover: rgb(240, 240, 240);
+  --phone-color-border: rgba(200, 200, 200, .4);
+  --phone-color-grey: #8e8e93;
+  --phone-color-blue: #0a84ff;
+  --phone-color-green: #32d74b;
+  --phone-color-green-secondary: #092911;
+  --phone-color-red: #ff3b30;
+  --phone-color-orange: rgb(255, 157, 10);
+  --phone-color-yellow: #cca250;
+  --phone-color-pink: #ff3b30;
+  --instagram-primary: #ffffff;
+  --instagram-blue: rgb(0, 149, 246);
+  --instagram-red: rgb(237, 73, 86);
+  --instagram-primary-text: rgb(38, 38, 38);
+  --instagram-secondary-text: rgb(142, 142, 142);
+  --instagram-stroke: rgb(219, 219, 219);
+  --instagram-border: rgb(219, 219, 219);
+  --instagram-highlight: rgb(239, 239, 239);
+  --tinder-color-pink: #ff4573;
+  --tinder-color-orange: #ff5f65;
+  --tinder-color-mix: #f5547c;
+  --twitter-primary: #f5f8fa;
+  --twitter-secondary: #14171a;
+  --twitter-background-highlight: rgb(239, 243, 244);
+  --twitter-primary-text: #14171a;
+  --twitter-secondary-text: #657786;
+  --twitter-alt-text: #657786;
+  --twitter-border: #bdc5cd75;
+  --twitter-border-secondary: #1d9bf0;
+  --twitter-highlight: #1d9bf0;
+  --twitter-hover: rgba(15, 20, 25, .1);
+  --twitter-action: #14171a;
+  --twitter-blue: #1d9bf0;
+  --tiktok-primary: #ffffff;
+  --tiktok-secondary: #000000;
+  --tiktok-text-primary: #000000;
+  --tiktok-text-secondary: #86878b;
+  --tiktok-color-border: #d0d1d3;
+  --tiktok-color-pink: #fe2c55;
+  --tiktok-color-aqua: #00f2ea;
+  --tiktok-color-yellow: #f8cd14;
+  --tiktok-color-blue: #479fc5;
+  --tiktok-color-unread: rgba(254, 44, 86, .2);
+  --crypto-color-primary: rgb(255, 255, 255);
+  --browser-primary: rgb(245, 245, 245);
+  --browser-secondary: rgba(153, 153, 153, .15);
+  --browser-gradient: linear-gradient(230deg, #f4d6ff, #c5f1ff);
+  --browser-footer: rgba(255, 255, 255, .75);
+  --browser-border: rgba(102, 102, 102, .75);
+  --browser-text-secondary: #696969;
+  --controlcentre-opacity: rgba(255, 255, 255, .15);
+  --controlcentre-opacity2: rgba(255, 255, 255, .2);
+  --controlcentre-active: rgba(255, 255, 255, .5);
+  --notification-primary: rgba(215, 215, 215, .5);
+  --notification-secondary: rgba(215, 215, 215, .1);
+  --lockscreeneditor-background: rgba(255, 255, 255, .75);
+  --lockscreeneditor-secondary: #d9d9d9;
+  --app-bg: #ececec;
+  --app-bg2: #ffffff;
+  --app-secondary: #ffffff;
+  --app-secondary2: #ececec;
+  --app-highlight: #cccccc;
+  --app-highlight2: #999999;
+  --app-highlight3: #ffffff;
+  --app-border: #666666;
+  --app-slider: #cccccc;
+  --app-slider-active: #333333;
+  --app-button: #ffffff;
+  --components-bg: #eeeeee;
+  --components-secondary: #ffffff;
+  --components-highlight: #cccccc;
+}
+
 @layer base {
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -14,6 +104,13 @@
   .no-scrollbar {
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
+  }
+  .battery-level {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-radius: 0.25em;
+    overflow: hidden;
   }
 
   /* Animações de fade-in */
