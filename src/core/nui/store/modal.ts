@@ -47,7 +47,7 @@ export const useModalStore = defineStore('modal', () => {
   const showModal = (options: ModalOptions): Promise<ModalResolve> => {
     title.value = options.title
     message.value = options.message || ''
-    buttons.value = options.buttons || [] // FIX: Ensure buttons is always an array
+    buttons.value = options.buttons || []
     inputs.value = options.inputs ? JSON.parse(JSON.stringify(options.inputs)) : [];
     
     isVisible.value = true
@@ -57,30 +57,42 @@ export const useModalStore = defineStore('modal', () => {
     })
   }
 
-  const hideModal = () => {
-    isVisible.value = false
-    setTimeout(() => {
-        title.value = ''
-        message.value = ''
-        buttons.value = []
-        inputs.value = [];
-    }, 200)
+  const hideModal = (): Promise<void> => {
+    isVisible.value = false;
+    return new Promise(resolve => {
+      setTimeout(() => {
+          title.value = '';
+          message.value = '';
+          buttons.value = [];
+          inputs.value = [];
+          resolve();
+      }, 200); // Duration should match animation
+    });
   }
 
-  const handleButtonClick = (buttonId: string) => {
+  const handleButtonClick = async (buttonId: string) => {
+    const clickedButton = buttons.value.find(b => b.id === buttonId);
+    if (!clickedButton) return;
+
+    // Do not hide if the action is disabled
+    if (clickedButton.style === 'default' && isDefaultActionDisabled.value) {
+      return;
+    }
+      
     if (resolvePromise) {
       const inputValues = inputs.value.reduce((acc, input) => {
         acc[input.id] = input.value;
         return acc;
       }, {} as Record<string, string>);
 
-      resolvePromise({
-        buttonId,
-        inputValues,
-      })
-      resolvePromise = null
+      const resolutionValue = { buttonId, inputValues };
+      
+      // Important: Resolve the promise *before* starting the hide animation
+      // to allow chained modals to be called immediately.
+      resolvePromise(resolutionValue);
+      resolvePromise = null;
     }
-    hideModal()
+    await hideModal();
   }
 
   return { 
