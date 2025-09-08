@@ -23,6 +23,13 @@ const routes: RouteRecordRaw[] = [
         props: true,
         meta: { transition: 'slide-left' }
       },
+      {
+        path: 'media-types/:mediaTypeId',
+        name: 'photos-media-type-detail',
+        component: () => import('../pages/MediaTypeDetail.vue'),
+        props: true,
+        meta: { transition: 'slide-left' }
+      },
     ],
   },
 ];

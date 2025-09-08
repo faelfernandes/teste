@@ -2,8 +2,10 @@
 import { usePhotosStore } from '../store/app-store';
 import AlbumItem from '../components/AlbumItem.vue';
 import { Plus, ChevronRight } from 'lucide-vue-next';
+import { useRouter } from 'vue-router';
 
 const store = usePhotosStore();
+const router = useRouter();
 
 const handleDelete = (albumId: number) => {
   store.deleteAlbum(albumId);
@@ -14,7 +16,7 @@ const handleAddAlbum = () => {
 };
 
 const handleMediaTypeClick = (typeId: string) => {
-  alert(`Navigate to ${typeId}`);
+  router.push(`/app/photos/media-types/${typeId}`);
 };
 </script>
 

@@ -5,6 +5,8 @@ import { Video, User, RectangleEllipsis, Download, Copy } from 'lucide-vue-next'
 export interface Photo {
   id: number;
   url: string;
+  type: 'image' | 'video';
+  duration?: string;
 }
 
 export interface Album {
@@ -30,21 +32,21 @@ export const usePhotosStore = defineStore('photos', () => {
   const selectedPhotoIds = ref<number[]>([]);
 
   const photos = ref<Photo[]>([
-    { id: 1, url: 'https://i.imgur.com/v2QzVzT.jpeg' },
-    { id: 2, url: 'https://i.imgur.com/sC5B7h1.jpeg' },
-    { id: 3, url: 'https://i.imgur.com/N8py2nO.jpeg' },
-    { id: 4, url: 'https://i.imgur.com/bW5E32P.jpeg' },
-    { id: 5, url: 'https://i.imgur.com/8pZ4sZz.png' },
-    { id: 6, url: 'https://i.imgur.com/uE4bcT7.png' },
-    { id: 7, url: 'https://i.imgur.com/pDRaD3E.png' },
-    { id: 8, url: 'https://i.imgur.com/jT8YwLg.png' },
-    { id: 9, url: 'https://i.imgur.com/v2QzVzT.jpeg' },
-    { id: 10, url: 'https://i.imgur.com/sC5B7h1.jpeg' },
-    { id: 11, url: 'https://i.imgur.com/N8py2nO.jpeg' },
-    { id: 12, url: 'https://i.imgur.com/bW5E32P.jpeg' },
-    { id: 13, url: 'https://i.imgur.com/8pZ4sZz.png' },
-    { id: 14, url: 'https://i.imgur.com/uE4bcT7.png' },
-    { id: 15, url: 'https://i.imgur.com/pDRaD3E.png' },
+    { id: 1, url: 'https://i.imgur.com/v2QzVzT.jpeg', type: 'video', duration: '0:05' },
+    { id: 2, url: 'https://i.imgur.com/sC5B7h1.jpeg', type: 'video', duration: '0:05' },
+    { id: 3, url: 'https://i.imgur.com/N8py2nO.jpeg', type: 'image' },
+    { id: 4, url: 'https://i.imgur.com/bW5E32P.jpeg', type: 'image' },
+    { id: 5, url: 'https://i.imgur.com/8pZ4sZz.png', type: 'image' },
+    { id: 6, url: 'https://i.imgur.com/uE4bcT7.png', type: 'image' },
+    { id: 7, url: 'https://i.imgur.com/pDRaD3E.png', type: 'image' },
+    { id: 8, url: 'https://i.imgur.com/jT8YwLg.png', type: 'image' },
+    { id: 9, url: 'https://i.imgur.com/v2QzVzT.jpeg', type: 'image' },
+    { id: 10, url: 'https://i.imgur.com/sC5B7h1.jpeg', type: 'image' },
+    { id: 11, url: 'https://i.imgur.com/N8py2nO.jpeg', type: 'image' },
+    { id: 12, url: 'https://i.imgur.com/bW5E32P.jpeg', type: 'image' },
+    { id: 13, url: 'https://i.imgur.com/8pZ4sZz.png', type: 'image' },
+    { id: 14, url: 'https://i.imgur.com/uE4bcT7.png', type: 'image' },
+    { id: 15, url: 'https://i.imgur.com/pDRaD3E.png', type: 'image' },
   ]);
 
   const myAlbums = ref<Album[]>([
@@ -79,6 +81,15 @@ export const usePhotosStore = defineStore('photos', () => {
       const album = getAlbumById.value(albumId);
       if (!album || !album.photoIds) return [];
       return photos.value.filter(photo => album.photoIds!.includes(photo.id));
+    }
+  });
+
+  const getPhotosByMediaType = computed(() => {
+    return (mediaTypeId: string) => {
+      if (mediaTypeId === 'videos') {
+        return photos.value.filter(p => p.type === 'video');
+      }
+      return [];
     }
   });
 
@@ -142,6 +153,23 @@ export const usePhotosStore = defineStore('photos', () => {
     cancelSelectionMode();
   };
 
+  const addSelectedToFavorites = () => {
+    if (selectedPhotoIds.value.length === 0) return;
+
+    const favoritesAlbum = myAlbums.value.find(a => a.id === 2); // Assuming ID 2 is Favourites
+    if (favoritesAlbum) {
+      selectedPhotoIds.value.forEach(photoId => {
+        if (!favoritesAlbum.photoIds?.includes(photoId)) {
+          favoritesAlbum.photoIds?.push(photoId);
+        }
+      });
+      favoritesAlbum.count = favoritesAlbum.photoIds?.length || 0;
+    }
+    
+    // After action, exit selection mode
+    cancelSelectionMode();
+  };
+
   return {
     myAlbums,
     sharedAlbums,
@@ -153,11 +181,13 @@ export const usePhotosStore = defineStore('photos', () => {
     isPhotoSelected,
     getAlbumById,
     getPhotosByAlbumId,
+    getPhotosByMediaType,
     toggleEditing,
     deleteAlbum,
     toggleSelectionMode,
     cancelSelectionMode,
     togglePhotoSelection,
     deleteSelectedPhotos,
+    addSelectedToFavorites,
   }
 })

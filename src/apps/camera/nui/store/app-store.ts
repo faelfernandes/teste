@@ -11,7 +11,7 @@ export const useCameraStore = defineStore('camera', () => {
   const zoomLevels = ref([0.5, 1, 2, 5]);
   const activeZoom = ref(1);
 
-  const lastPhotoThumbnail = ref('https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/ed9d/8b5c/233f84a2c692a13329430598f79a2a01?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=NSyZnNk-sFWfGOfw3j8ghwhT7bIQEF4KQvYCPdwQHYcySefQ-CU~7DUyqIIsLxFcDr8Limrvc6CVBJIKOTsEI21OkudmA8SyoW72sNBWPUyyV-qHzn8ingwgVT-xc7lHrGqCwIwfSjUDRDjEN3jzeH1MvOjZoGSSv4JmgtvZM4Wqic33A0HLNsXr4i2HEI16fLWHUv7OlasYbSTyS1pNVRsSk98l9q-okJPl9thNM9FnZa2E2Z5eKatMfq5J43u3VF-0artPd01G1kwYatqOLfntjrvX2fBiZ7luuamPUbyas4JsYaaOyRapMEWlxEKdzah14Y2G5SM8r0w~nBBn6Q__');
+  const lastPhotoThumbnail = ref('https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/ed9d/8b5c/233f84a2c692a13329430598f79a2a01?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=NSyZnNk-sFWfGOfw3j8ghwhT7bIQEF4KQvYCPdwQHYcySefQ-CU~7DUyqIIsLxFcDr8Limrvc6CVBJIKOTsEI21OkudmA8SyoW72sNBWPUyyV-qHzn8ingwgVT-xc7lHrGqCwIwfSjUDRDjEN3jzeH1MvOjZoGSSv4JmgtvZM4Wqic33A0HLNsXr4i2HEI16fLWHUv7OlasYbSTyS1pNVRsSk98l9q-okJPl9thNM9FnZa2E2Z5eKatMfq5J43u3VF-0artPd01G1kwYatqOLfntjrvX2fBiZ7luuamPUbyas4JsYaaOyRapMEWlxEKdzah14Y2G5SM8r0w~nBBn6Q__');
 
   // Video recording state
   const isRecording = ref(false);

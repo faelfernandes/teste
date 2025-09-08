@@ -25,7 +25,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 1,
       name: 'Jenny ❤️',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/d3bf/9367/69c5ab1af0ad87bf8d5fd1ccfebdc72e?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=YlR2VyPp~927BKf8TvjjJmSF4oGL1k-bmrgiu9UrQID8x~~~ATctLhOEWIRhzgaolDN4PY43pPznjPpjoDelAXDiCwOH5KGBrvdQ7D8G5EIa6Ba8Y41CV6VTnmlmG~pkALqzrZSAxvgi0rghIxcrKaewhGs4PLrTXD-fOuSAyl9M8bJSRAa5-UtE29KQ7NNvzpHe5PaOj1RjddTECyQ79v9QSfkMoqjELtvgF9j81f~wkc1LRrOe4H060X9No1P4jZPuY6ehUUFt3QBx~LsCFiMx9pa~kjT78A~retYNwcAVEuHBuYnxq8qIp~HHfEwoyIwLMT7uIJ4buLvWy5GgbA__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/d3bf/9367/69c5ab1af0ad87bf8d5fd1ccfebdc72e?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=YlR2VyPp~927BKf8TvjjJmSF4oGL1k-bmrgiu9UrQID8x~~~ATctLhOEWIRhzgaolDN4PY43pPznjPpjoDelAXDiCwOH5KGBrvdQ7D8G5EIa6Ba8Y41CV6VTnmlmG~pkALqzrZSAxvgi0rghIxcrKaewhGs4PLrTXD-fOuSAyl9M8bJSRAa5-UtE29KQ7NNvzpHe5PaOj1RjddTECyQ79v9QSfkMoqjELtvgF9j81f~wkc1LRrOe4H060X9No1P4jZPuY6ehUUFt3QBx~LsCFiMx9pa~kjT78A~retYNwcAVEuHBuYnxq8qIp~HHfEwoyIwLMT7uIJ4buLvWy5GgbA__',
       lastMessage: 'You reacted 😘 to "That\'s good advice, Marty."',
       lastMessageTime: '16:14',
       isPinned: true,
@@ -42,7 +42,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 2,
       name: 'Mom 💕',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/c0cd/344d/6e470b9ffec45419a3c8847a374bc585?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jA0TSNVRTr6ERCxWZ5NNJEU-kOsM3FvJ9wmgymxa0JQQrrO5Sx4iby4q7VUSA5AbBvYsvcA6Q7X5uevZutQPbD1gzvTzQBxMKL05ktyxRbxMoJ~2ml0YYTiLNwbexNRTCwj4rtw-TY4A-6HJYN-5sK9PwX9nh7E0WODJIN-NQiAD1pU1YXKDvoTwFfsyoYEO0ujkhwDCuh9pCwj16TzkTrZxUz21z7ckBYjI-50ClU~oN~ZT6BXvK2Afa9F7~oN7KtNXjboDo-wXLUt-fGx4IdKBsOJVMogzlp7r18TwW1AgGRSOakQpW2T-fhUhFjihpvnABzQw8a2mYRKXorg~sw__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/c0cd/344d/6e470b9ffec45419a3c8847a374bc585?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=jA0TSNVRTr6ERCxWZ5NNJEU-kOsM3FvJ9wmgymxa0JQQrrO5Sx4iby4q7VUSA5AbBvYsvcA6Q7X5uevZutQPbD1gzvTzQBxMKL05ktyxRbxMoJ~2ml0YYTiLNwbexNRTCwj4rtw-TY4A-6HJYN-5sK9PwX9nh7E0WODJIN-NQiAD1pU1YXKDvoTwFfsyoYEO0ujkhwDCuh9pCwj16TzkTrZxUz21z7ckBYjI-50ClU~oN~ZT6BXvK2Afa9F7~oN7KtNXjboDo-wXLUt-fGx4IdKBsOJVMogzlp7r18TwW1AgGRSOakQpW2T-fhUhFjihpvnABzQw8a2mYRKXorg~sw__',
       lastMessage: 'Mom is typing...',
       lastMessageTime: '19:45',
       isPinned: false,
@@ -59,7 +59,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 3,
       name: 'Daddy',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/fd1b/0ed3/abdac5be0bc25644a253d4dfa20632a3?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=CLHFdso5LyDct9VNAIkeV5jsrkSK8WHdBo5bICnKdU9xuYVXqw0dIEwQ1WsEpW0~rUgEcNktsCirOUt8N3q5WYSebbxGdvoUbrcpfA6YbjniCqHBw2L03wf0ivlEkmFeRtmnIRY~08CLb3pxHJDy5Ks70ApEVou1dRf2VKGSHs-dw04sbdVSFomfau-WjaLoylQb9zEZX1NaAHj31W8RgZvfOot5wmg5uHnK9sTOzHI0vZeBzj6iXBxm8PZoTYp9oXaIj087X3b6WMuLX65AWV7ipEMC6Y1LNfMLAkxJthwpL-Jn9sjKrhwsJ5MCL3~azcaMNsqby9rgs6yzcm4GAQ__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/fd1b/0ed3/abdac5be0bc25644a253d4dfa20632a3?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=CLHFdso5LyDct9VNAIkeV5jsrkSK8WHdBo5bICnKdU9xuYVXqw0dIEwQ1WsEpW0~rUgEcNktsCirOUt8N3q5WYSebbxGdvoUbrcpfA6YbjniCqHBw2L03wf0ivlEkmFeRtmnIRY~08CLb3pxHJDy5Ks70ApEVou1dRf2VKGSHs-dw04sbdVSFomfau-WjaLoylQb9zEZX1NaAHj31W8RgZvfOot5wmg5uHnK9sTOzHI0vZeBzj6iXBxm8PZoTYp9oXaIj087X3b6WMuLX65AWV7ipEMC6Y1LNfMLAkxJthwpL-Jn9sjKrhwsJ5MCL3~azcaMNsqby9rgs6yzcm4GAQ__',
       lastMessage: 'I mean he wrecked it! 😭',
       lastMessageTime: '19:42',
       isPinned: false,
@@ -76,7 +76,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 4,
       name: 'Biff Tannen',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/7f93/8e41/7b4b0729b2a04ac4f5586eedf42efbed?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=etVDigRU7iUg2bm-7GKdaNriGeOkmJ45naRRfw0jBcEwUof6jBhGAiZHciO-JgDnzEYQve9bQMGt9i8STGbaoOtVj1U2qm3cWP1PpgLh8anpYiV7CZmtZaICweUvfCjvOvgcXkAHmg-w1iRrVvilbJeyTImMhv0c-bUC1ebvlD9LIaFu7BcuX9uiDCHU-0lD7oodYl6224WMPs6YKzXjKdes3RlEibIal5DS4K6THrwtk7Xi9gucLlK6PQ7nf2Tfczvge5nP7pzNVG7KPtdupQzNC9qLC883Sule15z1xouRwwS4eKTPrle5A~3ZTv5hLkKtx~UO4Hw~D6oKCdLrCg__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/7f93/8e41/7b4b0729b2a04ac4f5586eedf42efbed?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=etVDigRU7iUg2bm-7GKdaNriGeOkmJ45naRRfw0jBcEwUof6jBhGAiZHciO-JgDnzEYQve9bQMGt9i8STGbaoOtVj1U2qm3cWP1PpgLh8anpYiV7CZmtZaICweUvfCjvOvgcXkAHmg-w1iRrVvilbJeyTImMhv0c-bUC1ebvlD9LIaFu7BcuX9uiDCHU-0lD7oodYl6224WMPs6YKzXjKdes3RlEibIal5DS4K6THrwtk7Xi9gucLlK6PQ7nf2Tfczvge5nP7pzNVG7KPtdupQzNC9qLC883Sule15z1xouRwwS4eKTPrle5A~3ZTv5hLkKtx~UO4Hw~D6oKCdLrCg__',
       lastMessage: 'Say hi to your mom for me.',
       lastMessageTime: '18:23',
       isPinned: false,
@@ -93,7 +93,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 5,
       name: 'Clocktower Lady',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/c7d7/f113/95838bef5fc22429c11f9cfec9183e61?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=EOiqxCn6x4Mw42aqgUTdNLLxzTTaBWqgoBt1E-N8~uuTrkSutJPgwDDD2gFa2CFj04uuOJGap4JGRcYTKX0pDCTMAT0y7dIbG97k95yDdh4sVnGCXxAlcGoBymirDRlu0Q7HPSNeWpGhBXBMA8Uweoly8cfdzg2TJg4zCXaPlHNx9Pa8zwzImapCrWsG5nTSMcY-bwTg5HB~~VOCy4ZBFi-PTB8G6Vb5nBlGzZEl1D6SqiQCrNMfxKYdza7BlooZkbQLrZOesH-jInL8q7JfZyViT0fP9sA9f-34odCdCrhpvZjEUg68LeEp6qr6ge08W0job9NdE5l5-TLq2LY1SA__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/c7d7/f113/95838bef5fc22429c11f9cfec9183e61?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=EOiqxCn6x4Mw42aqgUTdNLLxzTTaBWqgoBt1E-N8~uuTrkSutJPgwDDD2gFa2CFj04uuOJGap4JGRcYTKX0pDCTMAT0y7dIbG97k95yDdh4sVnGCXxAlcGoBymirDRlu0Q7HPSNeWpGhBXBMA8Uweoly8cfdzg2TJg4zCXaPlHNx9Pa8zwzImapCrWsG5nTSMcY-bwTg5HB~~VOCy4ZBFi-PTB8G6Vb5nBlGzZEl1D6SqiQCrNMfxKYdza7BlooZkbQLrZOesH-jInL8q7JfZyViT0fP9sA9f-34odCdCrhpvZjEUg68LeEp6qr6ge08W0job9NdE5l5-TLq2LY1SA__',
       lastMessage: 'Save the clock tower?',
       lastMessageTime: '16:15',
       isPinned: false,
@@ -110,7 +110,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 6,
       name: 'Mr. Strickland',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/e985/ca81/e7249f7823a810aebd27eb4aadad0e48?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OU3QcYRjWozIjVwgUlh8pzM0TLBDHuILEPdr7lgs5~IH-bwoAAzYkViKR0xavD~zeFMvauYeZCEpPlQVF2B3N~OZpVg31k0kIins6Vpq47HJt5813EWk0zxA8OSiI8gRO7ylKUonsr2-djPoO6NIxSATrbrUtXgz6eiM5IYU8aLytFWh9LFbNSJefqqpZy0LWKnZhb-z-Qug2jx1ryfLdikkSOjPjHlZs5wCLbmscclmQEcB-GrsJSjf7vsG2gQsN-ZV3nJvZX0jVwQJihInkKtxiLJfp97pdXuj-hq~ZYX~IxSum8LApiEaeboO1Wo0WW958Ex9zh~-bKQKYgNrWg__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/e985/ca81/e7249f7823a810aebd27eb4aadad0e48?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=OU3QcYRjWozIjVwgUlh8pzM0TLBDHuILEPdr7lgs5~IH-bwoAAzYkViKR0xavD~zeFMvauYeZCEpPlQVF2B3N~OZpVg31k0kIins6Vpq47HJt5813EWk0zxA8OSiI8gRO7ylKUonsr2-djPoO6NIxSATrbrUtXgz6eiM5IYU8aLytFWh9LFbNSJefqqpZy0LWKnZhb-z-Qug2jx1ryfLdikkSOjPjHlZs5wCLbmscclmQEcB-GrsJSjf7vsG2gQsN-ZV3nJvZX0jVwQJihInkKtxiLJfp97pdXuj-hq~ZYX~IxSum8LApiEaeboO1Wo0WW958Ex9zh~-bKQKYgNrWg__',
       lastMessage: 'You deleted this message.',
       lastMessageTime: '08:57',
       isPinned: false,
@@ -127,7 +127,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 7,
       name: 'Emmett "Doc" Brown',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/ee2d/a5d3/5ef70762e5fa2af8ed7761ecda05a65d?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=heIpR1mTtWBSevca2pZz2RHryXL2nCq3cqdRHZ5AS-dLPzdo4JBWmfFRQG4aaiPNay0JGE32mG6dLjCfF8biYup0s0sC1NFJwZ84QkSn5nWKpqPVPgv~WDie0sz-JvHqEjB0nXE0ucJtsPc7KqftuBIwR-0d1-ef1Gvz01WvWTKVZpqCK9~fSONENKKCHpOxcrpBSl9TKGaduSgqHUzX34GYkuLcbM6bhY8vQWlZ3cw5ZWK5T74MjV-pO-7m4SihVT0loMvsrjYtnNWt1rLgY4QBqXkwxPny~xq69K97EUcwtAZJ9pYUdcYFjkmj0N6ja~mSeH-HeVVRQpNGWIV4YA__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/ee2d/a5d3/5ef70762e5fa2af8ed7761ecda05a65d?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=heIpR1mTtWBSevca2pZz2RHryXL2nCq3cqdRHZ5AS-dLPzdo4JBWmfFRQG4aaiPNay0JGE32mG6dLjCfF8biYup0s0sC1NFJwZ84QkSn5nWKpqPVPgv~WDie0sz-JvHqEjB0nXE0ucJtsPc7KqftuBIwR-0d1-ef1Gvz01WvWTKVZpqCK9~fSONENKKCHpOxcrpBSl9TKGaduSgqHUzX34GYkuLcbM6bhY8vQWlZ3cw5ZWK5T74MjV-pO-7m4SihVT0loMvsrjYtnNWt1rLgY4QBqXkwxPny~xq69K97EUcwtAZJ9pYUdcYFjkmj0N6ja~mSeH-HeVVRQpNGWIV4YA__',
       lastMessage: 'Location',
       lastMessageTime: '08:24',
       isPinned: false,
@@ -145,7 +145,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 8,
       name: 'Dave',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/34d8/9b8f/8d2aaa7ee3a85e20784c61e60bfb33f3?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=uFsjpWIPWYdeVbLFPstEJ55ht8JFgJC-I2L3TKmMm8hXXF7PTnNPt~6fqUpJQ1Y71CRhMmEG92QT6slEWsORYC5S4qwFaW3QUUQYAiYE-DAl6VwrEBmxxzrHhUD4uXS7iVuZY8fKMGtyEFsCOUPTJPvy9Q-cbEUWObNjCeRyFUK1xJ14hlEM8~wdCb6xNd~3BlE-2LJk1VSCE2FiVxA2c0Ti8hx8uBBc0DjpzO1OcXRxQAW011lD-nThBjEFzFiVjHpJoDKTbpTXrj-dxQ6hyVWlHf~kyoUcJGtnDPgYqS84HGcEWhzprvklV56xrE35QPC6DDYxxIUWZUvAuwLlLg__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/34d8/9b8f/8d2aaa7ee3a85e20784c61e60bfb33f3?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=uFsjpWIPWYdeVbLFPstEJ55ht8JFgJC-I2L3TKmMm8hXXF7PTnNPt~6fqUpJQ1Y71CRhMmEG92QT6slEWsORYC5S4qwFaW3QUUQYAiYE-DAl6VwrEBmxxzrHhUD4uXS7iVuZY8fKMGtyEFsCOUPTJPvy9Q-cbEUWObNjCeRyFUK1xJ14hlEM8~wdCb6xNd~3BlE-2LJk1VSCE2FiVxA2c0Ti8hx8uBBc0DjpzO1OcXRxQAW011lD-nThBjEFzFiVjHpJoDKTbpTXrj-dxQ6hyVWlHf~kyoUcJGtnDPgYqS84HGcEWhzprvklV56xrE35QPC6DDYxxIUWZUvAuwLlLg__',
       lastMessage: 'Thanks bro!',
       lastMessageTime: '08:01',
       isPinned: false,
@@ -162,7 +162,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 9,
       name: 'Lynda',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/d056/f9cf/00524651c706714f8ea19128b2792915?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=KuakCo89evrboM2WB~TYl2YCeGHXjOXUGkg3GWzF0sPqN3ZTyk01jCOGOmPNEDB-zgVJzwteD26nkyY8NVVeNlu5p3Bpoh~5OP9UeKJP1rRLgZwTIgebIUvW45CuwsE7G8FBXJUPwvlhnW3RffuAvd4X10HCWJc~VBdIRrF5A7pAzLQYYwwaBrNrpVGuptfdBNd6Prb14ZrxYaqUe7yD5IBVeIrx9VIkiU5LgEnLUK-hJutD11QBWzZgT-T-gPVw6squ-~bnWvk7Cw3n-XmW3cVU68sskl-ykapGqyGPCqrCtHi0JddfS2Mn7Gl1e3RvL4BDyWCwGFOSCSWGz0auxQ__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/d056/f9cf/00524651c706714f8ea19128b2792915?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=KuakCo89evrboM2WB~TYl2YCeGHXjOXUGkg3GWzF0sPqN3ZTyk01jCOGOmPNEDB-zgVJzwteD26nkyY8NVVeNlu5p3Bpoh~5OP9UeKJP1rRLgZwTIgebIUvW45CuwsE7G8FBXJUPwvlhnW3RffuAvd4X10HCWJc~VBdIRrF5A7pAzLQYYwwaBrNrpVGuptfdBNd6Prb14ZrxYaqUe7yD5IBVeIrx9VIkiU5LgEnLUK-hJutD11QBWzZgT-T-gPVw6squ-~bnWvk7Cw3n-XmW3cVU68sskl-ykapGqyGPCqrCtHi0JddfS2Mn7Gl1e3RvL4BDyWCwGFOSCSWGz0auxQ__',
       lastMessage: 'Ok!',
       lastMessageTime: 'Yesterday',
       isPinned: false,
@@ -196,7 +196,7 @@ export const useMessagesStore = defineStore('messages', () => {
     {
       id: 11,
       name: 'Goldie Wilson',
-      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/d114/b188/f9dff7afb62af199df147cc90c22808c?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=SDlTR8JIpF7SHoR1-ai1KnFN87Ko~ERhA0MN3XBvx76o~9QC7~KeIWhxc6JfrzYFS7ROwDjk4vdFlDlzDYaIZlu3-4mMQOWZmNu4jygz3g5ZF3IL8q3sV~xswjDkSl1LfelGH1NZRdYoPfe3RMmVzn0~A5E7Xy89MVHlIgzn4cbuxbqg~Ls4u4Marj~0CE1X5eoIYjNT-k2VHl7Gl1lA90y7eXegOVHPXXZAq4osAEZ4gJrZGAzrjwRrMBr0tK2qWJq-cfy7jjiOrYky9bVFfqf2W9xUsJx2b-3N4-vKFgE5SMA4jZp8hcn1wpc2Pmcl4DDD3j1TTo9FnRzi2jtszw__',
+      avatarUrl: 'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://s3-alpha-sig.figma.com/img/d114/b188/f9dff7afb62af199df147cc90c22808c?Expires=1757289600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=SDlTR8JIpF7SHoR1-ai1KnFN87Ko~ERhA0MN3XBvx76o~9QC7~KeIWhxc6JfrzYFS7ROwDjk4vdFlDlzDYaIZlu3-4mMQOWZmNu4jygz3g5ZF3IL8q3sV~xswjDkSl1LfelGH1NZRdYoPfe3RMmVzn0~A5E7Xy89MVHlIgzn4cbuxbqg~Ls4u4Marj~0CE1X5eoIYjNT-k2VHl7Gl1lA90y7eXegOVHPXXZAq4osAEZ4gJrZGAzrjwRrMBr0tK2qWJq-cfy7jjiOrYky9bVFfqf2W9xUsJx2b-3N4-vKFgE5SMA4jZp8hcn1wpc2Pmcl4DDD3j1TTo9FnRzi2jtszw__',
       lastMessage: '2:03',
       lastMessageTime: '20/02/1984',
       isPinned: false,

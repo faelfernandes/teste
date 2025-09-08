@@ -41,8 +41,8 @@ export const useAppsStore = defineStore('apps', () => {
           compatibility: app.compatibility || 'Works with this phone',
           inAppPurchases: app.inAppPurchases || 'No',
           screenshots: app.screenshots || [
-            'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/270x585/f0f0f0/333?text=Light+Mode',
-            'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/270x585/1c1c1e/eee?text=Dark+Mode'
+            'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/270x585/f0f0f0/333?text=Light+Mode',
+            'https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://img-wrapper.vercel.app/image?url=https://placehold.co/270x585/1c1c1e/eee?text=Dark+Mode'
           ],
         };
       });
