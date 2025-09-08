@@ -1,11 +1,30 @@
-import type { RouteRecordRaw } from 'vue-router'
+import type { RouteRecordRaw } from 'vue-router';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/app/photos',
-    name: 'photos',
-    component: () => import('../index.vue')
-  }
-]
+    component: () => import('../index.vue'),
+    redirect: '/app/photos/albums',
+    children: [
+      {
+        path: 'gallery',
+        name: 'photos-gallery',
+        component: () => import('../pages/Gallery.vue'),
+      },
+      {
+        path: 'albums',
+        name: 'photos-albums',
+        component: () => import('../pages/Albums.vue'),
+      },
+      {
+        path: 'albums/:albumId',
+        name: 'photos-album-detail',
+        component: () => import('../pages/AlbumDetail.vue'),
+        props: true,
+        meta: { transition: 'slide-left' }
+      },
+    ],
+  },
+];
 
-export default routes
+export default routes;

@@ -1,63 +1,163 @@
 import { defineStore } from 'pinia'
-import { ref } from 'vue'
+import { ref, computed, markRaw } from 'vue'
+import { Video, User, RectangleEllipsis, Download, Copy } from 'lucide-vue-next';
+
+export interface Photo {
+  id: number;
+  url: string;
+}
+
+export interface Album {
+  id: number;
+  name: string;
+  count: number;
+  thumbnailUrl: string;
+  isFavorite?: boolean;
+  isDeletable?: boolean;
+  photoIds?: number[];
+}
+
+export interface MediaType {
+  id: string;
+  name: string;
+  count: number;
+  icon: any; // Component
+}
 
 export const usePhotosStore = defineStore('photos', () => {
-  // State
-  const isLoaded = ref(false)
-  const data = ref<any[]>([])
-  const loading = ref(false)
-  const error = ref<string | null>(null)
+  const isEditing = ref(false);
+  const isSelectionMode = ref(false);
+  const selectedPhotoIds = ref<number[]>([]);
 
-  // Actions
-  const loadData = async () => {
-    loading.value = true
-    error.value = null
-    
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000))
-      
-      // Mock data
-      data.value = [
-        { id: 1, title: 'Sample Item 1' },
-        { id: 2, title: 'Sample Item 2' },
-        { id: 3, title: 'Sample Item 3' }
-      ]
-      
-      isLoaded.value = true
-    } catch (err) {
-      error.value = 'Failed to load data'
-      console.error('Error loading photos data:', err)
-    } finally {
-      loading.value = false
+  const photos = ref<Photo[]>([
+    { id: 1, url: 'https://i.imgur.com/v2QzVzT.jpeg' },
+    { id: 2, url: 'https://i.imgur.com/sC5B7h1.jpeg' },
+    { id: 3, url: 'https://i.imgur.com/N8py2nO.jpeg' },
+    { id: 4, url: 'https://i.imgur.com/bW5E32P.jpeg' },
+    { id: 5, url: 'https://i.imgur.com/8pZ4sZz.png' },
+    { id: 6, url: 'https://i.imgur.com/uE4bcT7.png' },
+    { id: 7, url: 'https://i.imgur.com/pDRaD3E.png' },
+    { id: 8, url: 'https://i.imgur.com/jT8YwLg.png' },
+    { id: 9, url: 'https://i.imgur.com/v2QzVzT.jpeg' },
+    { id: 10, url: 'https://i.imgur.com/sC5B7h1.jpeg' },
+    { id: 11, url: 'https://i.imgur.com/N8py2nO.jpeg' },
+    { id: 12, url: 'https://i.imgur.com/bW5E32P.jpeg' },
+    { id: 13, url: 'https://i.imgur.com/8pZ4sZz.png' },
+    { id: 14, url: 'https://i.imgur.com/uE4bcT7.png' },
+    { id: 15, url: 'https://i.imgur.com/pDRaD3E.png' },
+  ]);
+
+  const myAlbums = ref<Album[]>([
+    { id: 1, name: 'Recents', count: 21, thumbnailUrl: 'https://i.imgur.com/8pZ4sZz.png', isDeletable: false, photoIds: photos.value.map(p => p.id) },
+    { id: 2, name: 'Favourites', count: 7, thumbnailUrl: 'https://i.imgur.com/uE4bcT7.png', isFavorite: true, isDeletable: false, photoIds: [5,6,7,8,12,13,14] },
+    { id: 3, name: 'Vacation', count: 4, thumbnailUrl: 'https://i.imgur.com/pDRaD3E.png', isDeletable: true, photoIds: [9,10,11,12] },
+  ])
+
+  const sharedAlbums = ref<Album[]>([
+    { id: 4, name: 'Cars', count: 8, thumbnailUrl: 'https://i.imgur.com/jT8YwLg.png', isDeletable: true, photoIds: [1,2,3,4,9,10,11,12] },
+  ])
+
+  const mediaTypes = ref<MediaType[]>([
+    { id: 'videos', name: 'Videos', count: 2, icon: markRaw(Video) },
+    { id: 'selfies', name: 'Selfies', count: 0, icon: markRaw(User) },
+    { id: 'screenshots', name: 'Screenshots', count: 0, icon: markRaw(RectangleEllipsis) },
+    { id: 'imports', name: 'Imports', count: 0, icon: markRaw(Download) },
+    { id: 'duplicates', name: 'Duplicates', count: 0, icon: markRaw(Copy) },
+  ]);
+
+  const selectedCount = computed(() => selectedPhotoIds.value.length);
+  const isPhotoSelected = computed(() => (photoId: number) => selectedPhotoIds.value.includes(photoId));
+
+  const getAlbumById = computed(() => {
+    return (albumId: number) => {
+      return myAlbums.value.find(a => a.id === albumId) || sharedAlbums.value.find(a => a.id === albumId);
     }
-  }
+  });
 
-  const clearData = () => {
-    data.value = []
-    isLoaded.value = false
-    error.value = null
-  }
+  const getPhotosByAlbumId = computed(() => {
+    return (albumId: number) => {
+      const album = getAlbumById.value(albumId);
+      if (!album || !album.photoIds) return [];
+      return photos.value.filter(photo => album.photoIds!.includes(photo.id));
+    }
+  });
 
-  const addItem = (item: any) => {
-    data.value.push(item)
-  }
+  const toggleEditing = () => {
+    isEditing.value = !isEditing.value;
+  };
 
-  const removeItem = (id: number) => {
-    data.value = data.value.filter(item => item.id !== id)
-  }
+  const deleteAlbum = (albumId: number) => {
+    let index = myAlbums.value.findIndex(a => a.id === albumId);
+    if (index !== -1) {
+      myAlbums.value.splice(index, 1);
+      return;
+    }
+    index = sharedAlbums.value.findIndex(a => a.id === albumId);
+    if (index !== -1) {
+      sharedAlbums.value.splice(index, 1);
+    }
+  };
+  
+  const clearSelection = () => {
+    selectedPhotoIds.value = [];
+  };
+
+  const toggleSelectionMode = () => {
+    isSelectionMode.value = !isSelectionMode.value;
+    if (!isSelectionMode.value) {
+      clearSelection();
+    }
+  };
+
+  const cancelSelectionMode = () => {
+    isSelectionMode.value = false;
+    clearSelection();
+  };
+
+  const togglePhotoSelection = (photoId: number) => {
+    if (!isSelectionMode.value) return;
+    const index = selectedPhotoIds.value.indexOf(photoId);
+    if (index > -1) {
+      selectedPhotoIds.value.splice(index, 1);
+    } else {
+      selectedPhotoIds.value.push(photoId);
+    }
+  };
+
+  const deleteSelectedPhotos = () => {
+    // Remove photos from the main list
+    photos.value = photos.value.filter(p => !selectedPhotoIds.value.includes(p.id));
+
+    // Remove photo IDs from all albums and update counts
+    const allAlbums = [...myAlbums.value, ...sharedAlbums.value];
+    allAlbums.forEach(album => {
+      if (album.photoIds) {
+        const initialCount = album.photoIds.length;
+        album.photoIds = album.photoIds.filter(id => !selectedPhotoIds.value.includes(id));
+        album.count -= (initialCount - album.photoIds.length);
+      }
+    });
+
+    // Exit selection mode
+    cancelSelectionMode();
+  };
 
   return {
-    // State
-    isLoaded,
-    data,
-    loading,
-    error,
-    
-    // Actions
-    loadData,
-    clearData,
-    addItem,
-    removeItem
+    myAlbums,
+    sharedAlbums,
+    mediaTypes,
+    isEditing,
+    isSelectionMode,
+    selectedPhotoIds,
+    selectedCount,
+    isPhotoSelected,
+    getAlbumById,
+    getPhotosByAlbumId,
+    toggleEditing,
+    deleteAlbum,
+    toggleSelectionMode,
+    cancelSelectionMode,
+    togglePhotoSelection,
+    deleteSelectedPhotos,
   }
 })
