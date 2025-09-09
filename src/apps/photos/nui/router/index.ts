@@ -30,6 +30,13 @@ const routes: RouteRecordRaw[] = [
         props: true,
         meta: { transition: 'slide-left' }
       },
+      {
+        path: 'view/:context/:contextId/:mediaId',
+        name: 'photos-media-viewer',
+        component: () => import('../pages/MediaViewer.vue'),
+        props: true,
+        meta: { transition: 'fade', noCorePadding: true }
+      },
     ],
   },
 ];

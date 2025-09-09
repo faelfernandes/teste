@@ -1,5 +1,14 @@
 <script setup lang="ts">
+import { computed } from 'vue';
+import { useRoute } from 'vue-router';
 import BottomTabBar from './components/BottomTabBar.vue';
+
+const route = useRoute();
+
+const showBottomBar = computed(() => {
+  const visibleRoutes = ['photos-gallery', 'photos-albums'];
+  return visibleRoutes.includes(route.name as string);
+});
 </script>
 
 <template>
@@ -13,7 +22,7 @@ import BottomTabBar from './components/BottomTabBar.vue';
         </transition>
       </router-view>
     </main>
-    <footer class="sticky bottom-0 z-10">
+    <footer v-if="showBottomBar" class="sticky bottom-0 z-10">
       <BottomTabBar />
     </footer>
   </div>

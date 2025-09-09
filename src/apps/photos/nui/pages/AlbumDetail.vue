@@ -45,11 +45,9 @@ const handleMoreOptions = async () => {
   ]);
 
   if (result === 'add-to-album') {
-    // Placeholder for a more complex UI
     alert('Add to Album functionality not implemented.');
   } else if (result === 'add-to-favourites') {
     store.addSelectedToFavorites();
-    // In a real app, you might show a confirmation toast/modal here.
   }
 };
 
@@ -57,7 +55,14 @@ const handlePhotoClick = (photoId: number) => {
   if (store.isSelectionMode) {
     store.togglePhotoSelection(photoId);
   } else {
-    alert(`View photo ${photoId}`);
+    router.push({
+      name: 'photos-media-viewer',
+      params: {
+        context: 'album',
+        contextId: props.albumId,
+        mediaId: photoId,
+      },
+    });
   }
 };
 

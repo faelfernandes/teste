@@ -46,7 +46,14 @@ const handlePhotoClick = (photoId: number) => {
   if (store.isSelectionMode) {
     store.togglePhotoSelection(photoId);
   } else {
-    alert(`View item ${photoId}`);
+    router.push({
+      name: 'photos-media-viewer',
+      params: {
+        context: 'mediaType',
+        contextId: props.mediaTypeId,
+        mediaId: photoId,
+      },
+    });
   }
 };
 
